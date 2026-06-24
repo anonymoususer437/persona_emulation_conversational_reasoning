@@ -1,0 +1,32 @@
+model:
+  encoder: "text-embedding-3-large"
+  generator: "claude-sonnet-4-20250514"
+  max_tokens: 1000
+
+embedding:
+  alpha: 0.75               # Agency Coefficient — weight for user turns vs model turns
+  batch_size: 64
+
+elc:
+  min_cluster_size: 5
+  min_samples: 3
+  lambda_decay: 0.01        # Exponential decay constant (half-life ~69 days)
+
+graph_rag:
+  gamma_decay: 0.95         # Geometric edge-weight decay factor
+  leiden_resolution: 1.2
+  hop_depth: 2              # d-hop traversal for structural summarization
+
+retrieval:
+  top_k_anchors: 3          # Number of cognitive anchors retrieved at Tier 1
+  top_k_exemplars: 5        # Number of exemplars retrieved per anchor at Tier 2
+
+evaluation:
+  pf_judge_runs: 3          # Number of independent LLM-as-judge queries per response
+  random_seeds: [42, 43, 44]
+
+data:
+  min_conversations: 30     # Minimum conversations per user for cohort inclusion
+  min_days_span: 60         # Minimum history span in days
+  holdout_conversations: 5  # Most recent conversations held out as test queries
+  dataset_name: "allenai/WildChat"
