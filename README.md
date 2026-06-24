@@ -4,8 +4,6 @@
 > **Paper:** *Zero-Shot Persona Emulation from Conversational Data*  
 
 
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
 
@@ -72,14 +70,4 @@ lps_repo/
 
 ---
 
-## Quickstart
-
-```bash
-git clone https://github.com/your-username/lps-persona-emulation
-cd lps-persona-emulation
-pip install -r requirements.txt
-jupyter notebook notebooks/01_data_preparation.ipynb
-```
-
----
 
